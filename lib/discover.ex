@@ -85,6 +85,6 @@ defmodule KubeNodeDiscover.Discover do
   defp container_healthy?(%{"state" => %{"running" => _}, "ready" => true}), do: true
   defp container_healthy?(_), do: false
 
-  defp pod_details(%{"status" => %{"podIP" => ip}, "metadata" => %{"name" => name}}) when length(ip) > 0 and length(name) > 0,
+  defp pod_details(%{"status" => %{"podIP" => ip}, "metadata" => %{"name" => name}}),
        do: {name, ip}
 end
