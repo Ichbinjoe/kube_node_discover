@@ -1,0 +1,8 @@
+type: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: node-discoverer
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get"]
